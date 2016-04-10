@@ -1,8 +1,3 @@
-acme_test:
-    resource: "@AcmeTestBundle/Controller/"
-    type:     annotation
-    prefix:   /acme
-
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

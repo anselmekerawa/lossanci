@@ -1,0 +1,82 @@
+{% extends "layout.html.twig" %}
+    {% block title_keywords %}{% endblock %}
+    {% block header %}{{ parent() }}{% endblock %}
+    {% block body %}
+        <div class="clearfix"> </div>
+        <div class="banner-info">
+            <h2>Retrieve your lost item</h2>
+            <p>Enter your full name, your document number or any unique specification the item you're looking for<br/> can be
+                identified with. For identification documents or any item your name is mentioned on, you can<br/> just refer your
+                full name. For other, do mention just the type (i.e: handbag, suite-case, etc.).<br/>
+                Good luck!!!</p>
+
+            <form method="get" action="{{ asset('searchit') }}">
+                <input placeholder="Go on..." required="" type="text" name="q">
+                <input value="Find it!" type="submit">
+                <div class="clearfix"> </div>
+            </form>
+        </div>
+    {% endblock %}
+    {% block callback_slider %}
+        <div class="slider">
+            <div class="container">
+                <!-- Slider-starts-Here -->
+                <script src="js/responsiveslides.min.js"></script>
+                <script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                        // Slideshow 4
+                        $("#slider3").responsiveSlides({
+                            auto: true,
+                            pager: true,
+                            nav: false,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+
+                    });
+                </script>
+                <!--//End-slider-script -->
+                <div id="top" class="callbacks_container">
+                    <ul class="rslides callbacks callbacks1" id="slider3">
+                        <li class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out 0s;" id="callbacks1_s0">
+                            <div class="slider-info">
+                                <h2>I lost my national ID card last month, thanks to Findit,
+                                    <span>I Found it :-)</span></h2>
+                                <p><a href="#">@buje</a>-4 Hours ago</p>
+                                <ul>
+                                    <li><a href="#" class="twitter-1"> </a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out 0s;" id="callbacks1_s1">
+                            <div class="slider-info">
+                                <h2>I thought I will never find my passport again when I lost it
+                                    <span>Just a second here, I found it</span></h2>
+                                <p><a href="#">@buje</a>-3 Hours ago</p>
+                                <ul>
+                                    <li><a href="#" class="twitter-2"> </a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="callbacks1_on" style="display: block; float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 500ms ease-in-out 0s;" id="callbacks1_s2">
+                            <div class="slider-info">
+                                <h2>I definately recommand Findit to everyone, it's easy to use
+                                    <span>And very quick to find it</span></h2>
+                                <p><a href="#">@buje</a>-2 Hours ago</p>
+                                <ul>
+                                    <li><a href="#" class="twitter-3"> </a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3 callbacks_here"><a href="#" class="callbacks1_s3">3</a></li></ul>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
