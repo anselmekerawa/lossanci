@@ -1,3 +1,7 @@
-app:
+front-end:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+back-end:
+    resource: "@AppBundle/Resources/Config/brouting.yml"
+    prefix: /admin
