@@ -19,22 +19,22 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("searchit", name="searchit")
+     * @Route("search", name="search")
      */
-    public function searchitAction()
+    public function searchAction()
     {
         $request = Request::createFromGlobals();
         $q = $request->query->get('q');
 
-        return $this->render("front-end/searchit.html.twig", array('q'=>$q));
+        return $this->render("front-end/search.html.twig", array('q'=>$q));
     }
 
     /**
-     * @Route("submitit", name="submit")
+     * @Route("submit", name="submit")
      */
     public function submititAction()
     {
-        return $this->render('front-end/searchit.html.twig');
+        return $this->render('front-end/submit.html.twig');
     }
 
     /**
@@ -42,7 +42,7 @@ class DefaultController extends Controller
      */
     public function logintAction()
     {
-        return $this->render('front-end/searchit.html.twig');
+        return $this->render('front-end/login.html.twig');
     }
 
 }
