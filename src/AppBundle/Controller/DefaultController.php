@@ -42,7 +42,7 @@ class DefaultController extends Controller
      */
     public function logintAction()
     {
-        return $this->render('front-end/login.html.twig');
+        return $this->render('back-end/login.html.twig');
     }
 
 }

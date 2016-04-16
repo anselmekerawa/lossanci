@@ -12,4 +12,9 @@ class backendController extends Controller
     {
         return $this->render("back-end/index.html.twig");
     }
+
+    public function profileAction()
+    {
+        return $this->render('back-end/profile.html.twig');
+    }
 }

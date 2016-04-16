@@ -1,3 +1,7 @@
 back_end_main:
     path: /
     defaults: { _controller: AppBundle:backend:index }
+
+profile:
+    path: profile
+    defaults: { _controller: AppBundle:backend:profile }

@@ -64,7 +64,7 @@
 
                             <div class="row x_title">
                                 <div class="col-md-6">
-                                    <h3>Network Activities <small>Graph title sub-title</small></h3>
+                                    <h3>Activities's Flow <small>Graph title sub-title</small></h3>
                                 </div>
                                 <div class="col-md-6">
                                     <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
@@ -82,13 +82,13 @@
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                                 <div class="x_title">
-                                    <h2>Top Campaign Performance</h2>
+                                    <h2>Top Lost Items</h2>
                                     <div class="clearfix"></div>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-6">
                                     <div>
-                                        <p>Facebook Campaign</p>
+                                        <p>ID Cards</p>
                                         <div class="">
                                             <div class="progress progress_sm" style="width: 76%;">
                                                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
@@ -96,7 +96,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <p>Twitter Campaign</p>
+                                        <p>Passport</p>
                                         <div class="">
                                             <div class="progress progress_sm" style="width: 76%;">
                                                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-6">
                                     <div>
-                                        <p>Conventional Media</p>
+                                        <p>Purse</p>
                                         <div class="">
                                             <div class="progress progress_sm" style="width: 76%;">
                                                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
@@ -114,7 +114,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <p>Bill boards</p>
+                                        <p>Driver's licence</p>
                                         <div class="">
                                             <div class="progress progress_sm" style="width: 76%;">
                                                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
@@ -763,3 +763,23 @@
             </div>
             <!-- /page content -->
         {% endblock %}
+
+{% block flot_js %}{{ parent() }}
+    {% include('back-end/inc/flot_js.js.html') %}
+{% endblock %}
+
+{% block worldmap %}{{ parent() }}
+    {% include('back-end/inc/worldmap.js.html') %}
+{% endblock %}
+
+{% block skycons %}{{ parent() }}
+    {% include('back-end/inc/skycons.js.html') %}
+{% endblock %}
+
+{% block dashbord_linegraph %}{{ parent() }}
+    {% include('back-end/inc/dashbord_linegraph.js.html') %}
+{% endblock %}
+
+{% block datepicker %}{{ parent() }}
+    {% include('back-end/inc/datepicker.js.html') %}
+{% endblock %}
