@@ -1,22 +1,32 @@
 {% extends "flayout.html.twig" %}
     {% block title_keywords %}{% endblock %}
-    {% block header %}{{ parent() }}{% endblock %}
     {% block body %}
-        <div class="clearfix"> </div>
-        <div class="banner-info">
-            <h2>Retrieve your lost item</h2>
-            <p>Enter your full name, your document number or any unique specification the item you're looking for<br/> can be
-                identified with. For identification documents or any item your name is mentioned on, you can<br/> just refer your
-                full name. For other, do mention just the type (i.e: handbag, suite-case, etc.).<br/>
-                Good luck!!!</p>
-
-            <form method="get" action="{{ asset('search') }}">
-                <input placeholder="Go on..." required="" type="text" name="q">
-                <input value="Find it!" type="submit">
-                <div class="clearfix"> </div>
-            </form>
+<body>
+<div class="container">
+    <!-- banner -->
+    <div class="banner">
+        <div class="container">
+            {%  block header %}{{ parent() }}{% endblock %}
         </div>
-    {% endblock %}
+        {% block innerbody %}
+                <div class="clearfix"> </div>
+                <div class="banner-info">
+                    <h2>Retrieve your lost item</h2>
+                    <p>Enter your full name, your document number or any unique specification the item you're looking for<br/> can be
+                        identified with. For identification documents or any item your name is mentioned on, you can<br/> just refer your
+                        full name. For other, do mention just the type (i.e: handbag, suite-case, etc.).<br/>
+                        Good luck!!!</p>
+
+                    <form method="get" action="{{ asset('search') }}">
+                        <input placeholder="Go on..." required="" type="text" name="q">
+                        <input value="Find it!" type="submit">
+                        <div class="clearfix"> </div>
+                    </form>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</div>
     {% block callback_slider %}
         <div class="slider">
             <div class="container">
@@ -79,4 +89,11 @@
                 </div>
             </div>
         </div>
+    {% endblock %}
+
+    {% block footer %}{{ parent() }}{% endblock %}
+    {% block scrolling_icon %}{{ parent() }} {% endblock %}
+        <a style="display: inline;" href="#" id="toTop"><span style="opacity: 0;" id="toTopHover"></span>To Top</a>
+    </body>
+</html>
     {% endblock %}
