@@ -737,32 +737,12 @@
                             </div>
                             <!-- end of weather widget -->
                         </div>
-
-
-
-
-
-
-
-
-
                     </div>
 
                 </div>
+                {% endblock %}
 
-                <!-- footer content -->
-
-                <footer>
-                    <div class="copyright-info">
-                        <p class="pull-right">Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </footer>
-                <!-- /footer content -->
-            </div>
-            <!-- /page content -->
-        {% endblock %}
+            {% block footer %}<!-- footer content -->{{ parent() }}{% endblock %}
 
 {% block flot_js %}{{ parent() }}
     {% include('back-end/inc/flot_js.js.html') %}

@@ -68,8 +68,19 @@
         {% block container %}
         {% endblock %}
 
-    </div>
+        {% block footer %}
 
+        <!-- footer content -->
+            <footer>
+                <div class="copyright-info">
+                    <p class="pull-right">Lossanci Cpanel by <a href="#">Anselme Nkondog</a>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+        {% endblock %}
+        </div>
+    </div>
 </div>
 
 <div id="custom_notifications" class="custom-notifications dsp_none">
@@ -109,6 +120,7 @@
 
 {% block profilejs %}{% endblock %}
 
+{% block pace %}{% endblock %}
 <!-- /footer content -->
 </body>
 

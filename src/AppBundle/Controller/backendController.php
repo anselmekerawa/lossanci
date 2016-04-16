@@ -17,4 +17,9 @@ class backendController extends Controller
     {
         return $this->render('back-end/profile.html.twig');
     }
+
+    public function usersAction()
+    {
+        return $this->render('back-end/contacts.html.twig');
+    }
 }
