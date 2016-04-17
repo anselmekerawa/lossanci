@@ -26,14 +26,14 @@
                 <div class="menu_section">
                     <h3>General</h3>
                     <ul class="nav side-menu">
-                        <li><a><i class="fa fa-home"></i> Home</a></li>
-                        <li><a><i class="fa fa-edit"></i> Lost items <span class="fa fa-chevron-down"></span></a>
+                        <li><a href="{{ path('back_end_main') }}"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a><i class="fa fa-bullseye"></i> Lost items <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu" style="display: none">
-                                <li><a href="form.html">All items</a>
+                                <li><a href="{{ path('items') }}">All items</a>
                                 </li>
-                                <li><a href="form_advanced.html">Add new</a>
+                                <li><a href="{{ path('addItem') }}">Add new</a>
                                 </li>
-                                <li><a href="form_validation.html">Categories</a>
+                                <li><a href="{{ path('itemsCategories') }}">Categories</a>
                                 </li>
                             </ul>
                         </li>
@@ -41,37 +41,37 @@
                             <ul class="nav child_menu" style="display: none">
                                 <li><a href="{{ path('users') }}">All users</a>
                                 </li>
-                                <li><a href="media_gallery.html">Add user</a>
+                                <li><a href="{{ path('addusers') }}">Add user</a>
                                 </li>
-                                <li><a href="typography.html">Categories</a>
+                                <li><a href="{{ path('userscategories') }}">Categories</a>
                                 </li>
                             </ul>
                         </li>
                         <li><a><i class="fa fa-gears"></i> Settings <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu" style="display: none">
-                                <li><a href="tables.html">Appearance</a>
+                                <li><a href="{{ path('general') }}">General</a>
                                 </li>
-                                <li><a href="tables_dynamic.html">Table Dynamic</a>
+                                <li><a href="{{ path('appearance') }}">Appearance</a>
+                                </li>
+                                <li><a href="{{ path('finance') }}">Finance</a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-envelope-o"></i> Mailing <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu" style="display: none">
-                                <li><a href="chartjs.html">Chart JS</a>
+                                <li><a href="{{ path('compose') }}">Compose</a>
                                 </li>
-                                <li><a href="chartjs2.html">Chart JS2</a>
+                                <li><a href="{{ path('inbox') }}">Inbox</a>
                                 </li>
-                                <li><a href="morisjs.html">Moris JS</a>
+                                <li><a href="{{ path('sent') }}">Sent</a>
                                 </li>
-                                <li><a href="echarts.html">ECharts </a>
-                                </li>
-                                <li><a href="other_charts.html">Other Charts </a>
+                                <li><a href="{{ path('parameters') }}">Paramters</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-                <div class="menu_section">
+                {#<div class="menu_section">
                     <h3>Live On</h3>
                     <ul class="nav side-menu">
                         <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
@@ -104,7 +104,7 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
+                </div>#}
 
             </div>
             <!-- /sidebar menu -->

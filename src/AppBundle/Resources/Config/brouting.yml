@@ -2,10 +2,66 @@ back_end_main:
     path: /
     defaults: { _controller: AppBundle:backend:index }
 
+items:
+    path: items
+    defaults: { _controller: AppBundle:backend:items }
+
+addItem:
+    path: items/add
+    defaults: { _controller: AppBundle:backend:addItem }
+
+itemsCategories:
+    path: items/categories
+    defaults: { _controller: AppBundle:backend:itemsCategories }
+
 profile:
     path: profile
     defaults: { _controller: AppBundle:backend:profile }
 
 users:
-    path: users
-    defaults: { _controller: AppBundle:backend:users }
+    path: users/{id}
+    defaults: { _controller: AppBundle:backend:users, id: 0 }
+    requirements:
+       id: \d+
+
+addusers:
+    path: users/add
+    defaults: { _controller: AppBundle:backend:addUser }
+
+deleteusers:
+    path: users/delete/{id}
+    defaults: { _controller: AppBundle:backend:add }
+    requirements:
+        id: \d+
+
+userscategories:
+    path: users/categories
+    defaults: { _controller: AppBundle:backend:usersCategories }
+
+general:
+    path: settings/general
+    defaults: { _controller: AppBundle:backend:general }
+
+finance:
+    path: settings/finance
+    defaults: { _controller: AppBundle:backend:finance }
+
+appearance:
+    path: settings/appearance
+    defaults: { _controller: AppBundle:backend:appearance }
+
+compose:
+    path: mailing/compose
+    defaults: { _controller: AppBundle:backend:compose }
+
+inbox:
+    path: mailing/inbox
+    defaults: { _controller: AppBundle:backend:inbox }
+
+sent:
+    path: mailing/sent
+    defaults: { _controller: AppBundle:backend:sent }
+
+parameters:
+    path: mailing/parameters
+    defaults: { _controller: AppBundle:backend:parameters }
