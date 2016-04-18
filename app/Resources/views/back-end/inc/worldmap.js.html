@@ -1,0 +1,25 @@
+<script type="text/javascript" src="{{ asset('js/back-end/maps/jquery-jvectormap-2.0.3.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/back-end/maps/gdp-data.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/back-end/maps/jquery-jvectormap-world-mill-en.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/back-end/maps/jquery-jvectormap-us-aea-en.js') }}"></script>
+        <!-- pace -->
+        <script src="{{ asset('js/back-end/pace/pace.min.js') }}"></script>
+        <script>
+        $(function() {
+            $('#world-map-gdp').vectorMap({
+                map: 'world_mill_en',
+                backgroundColor: 'transparent',
+                zoomOnScroll: false,
+                series: {
+                    regions: [{
+                        values: gdpData,
+                        scale: ['#E6F2F0', '#149B7E'],
+                        normalizeFunction: 'polynomial'
+                    }]
+                },
+                onRegionTipShow: function(e, el, code) {
+                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+                }
+            });
+        });
+</script>

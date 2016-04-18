@@ -1,0 +1,33 @@
+{% extends "flayout.html.twig" %}
+    {% block title_keywords %}{% endblock %}
+
+    {% block body %}
+<body>
+<div class="container">
+    <!-- banner -->
+    <div class="banner">
+        <div class="container">
+        {%  block header %}{{ parent() }}{% endblock %}
+        </div>
+        {% block innerbody %}
+            <div id="bodycontainer">
+                <div id="bodycontainer" style="color: #73879C">
+                    {% if q %}
+                        <p>Sorry, {{ q }} is not in our database. Your name will be save and a message will be sent to you when someone
+                            will find it</p>
+                    {% else %}
+                        <p>No search query</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</div>
+    {% block callbacl_slider %}{% endblock %}
+    {% block footer %}{{ parent() }}{% endblock %}
+    {% block scrolling_icon %}{{ parent() }}{% endblock %}
+
+    <a style="display: inline;" href="#" id="toTop"><span style="opacity: 0;" id="toTopHover"></span>To Top</a>
+    </body>
+</html>
+{% endblock %}

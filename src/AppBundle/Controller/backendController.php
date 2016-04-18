@@ -20,7 +20,7 @@ class backendController extends Controller
 
     public function addItemAction()
     {
-        return $this->render('back-end/blank.html.twig');
+        return $this->render('back-end/addItem.html.twig');
     }
 
     public function itemsCategoriesAction()
