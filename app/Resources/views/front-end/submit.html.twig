@@ -1,1 +1,226 @@
 {% extends "flayout.html.twig" %}
+    {% block header_link_script %}{{ parent() }}
+        <link href="{{ asset('fonts/back-end/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/back-end/animate.min.css') }}" rel="stylesheet">
+
+        <!-- Custom styling plus plugins -->
+        <link href="{{ asset('css/front-end/custom_tables.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/back-end/icheck/flat/green.css') }}" rel="stylesheet">
+        {% include('back-end/tables/tablescss.html.twig') %}
+    {% endblock %}
+    {% block title_keywords %}{% endblock %}
+
+    {% block body %}
+        <body>
+        <div class="container">
+            <!-- banner -->
+            <div class="banner">
+                <div class="container">
+                    {%  block header %}{{ parent() }}{% endblock %}
+                </div>
+                {% block innerbody %}
+                    <div id="bodycontainer" class="col-md-12 col-sm-12 col-xs-12">
+                        <div id="bodycontainer" style="color: #73879C">
+                            <div>
+                                {# Start by replacing this x_panel div with the one of the page to build #}
+                                <div class="x_panel" style="height:600px;">
+                                    <div class="x_title">
+                                        <h2>Submit a found or lost item</h2>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+
+
+                                        <!-- Smart Wizard -->
+                                        <p>To submit an item you just found, please follow the instruction below. Thanks for helping others.</p>
+                                        <div id="wizard" class="form_wizard wizard_horizontal">
+                                            <ul class="wizard_steps">
+                                                <li>
+                                                    <a href="#step-1">
+                                                        <span class="step_no">1</span>
+                          <span class="step_descr">
+                                            Step 1<br />
+                                            <small>About the item</small>
+                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#step-2">
+                                                        <span class="step_no">2</span>
+                          <span class="step_descr">
+                                            Step 2<br />
+                                            <small>Item's description</small>
+                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#step-3">
+                                                        <span class="step_no">3</span>
+                          <span class="step_descr">
+                                            Step 3<br />
+                                            <small>Load files</small>
+                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#step-4">
+                                                        <span class="step_no">4</span>
+                          <span class="step_descr">
+                                            Step 4<br />
+                                            <small>Confirm and submit</small>
+                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div id="step-1">
+                                                <form class="form-horizontal form-label-left">
+                                                    <div class="form-group" disabled="disabled">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="othertype">Choose a method <span class="required">*</span>
+                                                        </label>
+                                                        <div class="radio">
+                                                            <label class="">
+                                                                <span style="position: relative;" class="iradio_flat-green checked"><input style="position: absolute; opacity: 0;" class="flat" checked="" name="iCheck" type="radio"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></span> Submit lost item
+                                                            </label>
+                                                            <label class="">
+                                                                <div style="position: relative;" class="iradio_flat-green"><input style="position: absolute; opacity: 0;" class="flat" name="iCheck" type="radio"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div> Looking for a lost item
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="itemtype">Item type <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <select id="itemtype" required="required" class="form-control col-md-7 col-xs-12">
+                                                                <optgroup label="Documents">
+                                                                    <option>NID</option>
+                                                                    <option>Passport</option>
+                                                                    <option>Driver's licence</option>
+                                                                    <option>Credit card</option>
+                                                                </optgroup>
+                                                                <optgroup label="Content">
+                                                                    <option>Purse</option>
+                                                                    <option>Briefcase</option>
+                                                                    <option>Bag</option>
+                                                                    <option>Handbag</option>
+                                                                </optgroup>
+                                                                <optgroup label="Other">
+                                                                    <option>Other</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" disabled="disabled">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="othertype">Other type <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="text" id="othertype" name="othertype" required="required" class="form-control col-md-7 col-xs-12" placeholder="Pleace mention the type here">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ownername">Owner name <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="text" id="ownername" name="ownername" required="required" class="form-control col-md-7 col-xs-12" placeholder="Mention N/A if no owner name">
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                            <div id="step-2">
+                                                <h2 class="StepTitle">Tell us more about the item</h2>
+                                                <form class="form-horizontal form-label-left">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Found day <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input id="itemlocation" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Day the item was found">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Found Town <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input id="itemlocation" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Town where the item was found">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Actual situation <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input id="itemlocation" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Town where the item is now">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Collect method <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input id="itemlocation" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" placeholder="How can the owner collect the item ?">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Description <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <textarea id="itemlocation" class="date-picker form-control col-md-7 col-xs-12" required="required" placeholder="Describe any particularities about the item or composing items if it's a content item like a bag. Tell us in which situation the item was found (in a bus, while walking, etc...)"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div id="step-3">
+                                                <h2 class="StepTitle">Step 3 Content</h2>
+
+                                            </div>
+                                            <div id="step-4">
+                                                <h2 class="StepTitle">Step 4 Content</h2>
+
+                                            </div>
+
+                                        </div>
+                                        <!-- End SmartWizard Content -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+        {% block callbacl_slider %}{% endblock %}
+        {% block footer %}{{ parent() }}{% endblock %}
+        {% block scrolling_icon %}
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <!-- icheck -->
+            <script src="{{ asset('js/back-end/icheck/icheck.min.js') }}"></script>
+            {{ parent() }}
+            <!-- form wizard -->
+            <script type="text/javascript" src="{{ asset('js/back-end/wizard/jquery.smartWizard.js') }}"></script>
+        <!-- pace -->
+            <script src="{{ asset('js/back-end/pace/pace.min.js') }}"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    // Smart Wizard
+                    $('#wizard').smartWizard();
+
+                    function onFinishCallback() {
+                        $('#wizard').smartWizard('showMessage', 'Finish Clicked');
+                        //alert('Finish Clicked');
+                    }
+                });
+
+                /*$(document).ready(function() {
+                 // Smart Wizard
+                 $('#wizard_verticle').smartWizard({
+                 transitionEffect: 'slide'
+                 });
+
+                 });*/
+            </script>
+            <script src="{{ asset('js/back-end/custom.js') }}"></script>
+        {% endblock %}
+
+        <a style="display: inline;" href="#" id="toTop"><span style="opacity: 0;" id="toTopHover"></span>To Top</a>
+        </body>
+        </html>
+    {% endblock %}
