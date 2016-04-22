@@ -78,7 +78,7 @@
                                         </li>
                                     </ul>
                                     <div id="step-1">
-                                        <form class="form-horizontal form-label-left">
+                                        <form class="form-horizontal form-label-left" method="post" action="#" enctype="multipart/form-data">
                                             <div class="form-group" disabled="disabled">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="othertype">Choose a method <span class="required">*</span>
                                                 </label>
@@ -114,13 +114,28 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group" disabled="disabled">
+                                            <div class="form-group othertype">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="othertype">Other type <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                     <input type="text" id="othertype" name="othertype" required="required" class="form-control col-md-7 col-xs-12" placeholder="Pleace mention the type here">
                                                 </div>
                                             </div>
+                                            <script>
+                                            $(function() {
+                                                $('.othertype').hide();
+
+                                                    $('select').change(function() {
+                                                            if($(this).val() == 'Other')
+                                                            {
+                                                                $('.othertype').show();
+                                                            }
+                                                            else
+                                                            {
+                                                                $('.othertype').hide();
+                                                            }
+                                                        });
+                                            });</script>
                                             <div class="form-group">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ownername">Owner name <span class="required">*</span>
                                                 </label>
@@ -174,7 +189,12 @@
                                     </div>
                                     <div id="step-3">
                                         <h2 class="StepTitle">Step 3 Content</h2>
-
+                                            <div class="">
+                                                <div class="dz-default dz-message">
+                                                    <input type="file" multiple>
+                                                    <span>Drop file here to upload</span>
+                                                </div>
+                                            </div>
                                     </div>
                                     <div id="step-4">
                                         <h2 class="StepTitle">Step 4 Content</h2>
@@ -188,7 +208,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         {% endblock %}
             {% block extrajs %}
