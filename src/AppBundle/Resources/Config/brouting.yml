@@ -15,14 +15,14 @@ itemsCategories:
     defaults: { _controller: AppBundle:backend:itemsCategories }
 
 profile:
-    path: profile
-    defaults: { _controller: AppBundle:backend:profile }
+    path: profile/{id}
+    defaults: { _controller: AppBundle:backend:profile, id: 1 }
+    requirements:
+        id: \d+
 
 users:
-    path: users/{id}
-    defaults: { _controller: AppBundle:backend:users, id: 0 }
-    requirements:
-       id: \d+
+    path: users
+    defaults: { _controller: AppBundle:backend:users }
 
 addusers:
     path: users/add
